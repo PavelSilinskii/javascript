@@ -1,10 +1,22 @@
-var result = 12 - 6 / 3
-var result2 = 3 + 4 * 2
-var isGreater = 20 - 6 * 3 >= 4
-var isGreater2 = 20 - 6 * 3 >= 1
+console.log('5 % 2', 5 % 2)
+console.log('8 % 3', 8 % 3)
+console.log('15 % 5', 15 % 5)
 
-console.log('12 - 6 / 3:',result)
-console.log('3 + 4 * 2:',result2)
-console.log('20 - 6 * 3 >= 4:',isGreater)
-console.log('20 - 6 * 3 >= 1:',isGreater2)
-
+var i = 1
+//i = i + 1
+i++
+console.log('i',i)
+//i = i - 1
+i--
+console.log('i',i)
+//i = i + 3
+i +=3
+console.log('i',i)
+i /= 1.5
+console.log('i',i)
+i *= 3
+console.log('i',i)
+console.log('i',i++)
+console.log('i',++i)
+console.log('i',i--)
+console.log('i',--i)
