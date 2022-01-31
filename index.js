@@ -1,26 +1,53 @@
-var carColor = 'red'
-var carColor = 'green'
+var carName = 'Ford'
+var carYear = 2008
+var personYear = 1990
 
-// if(carColor === 'green'){
-// console.log('Цвет машины зеленый')
-// }else if(carColor === 'yellow'){
-// console.log('Цвет машины желтый')
-// }else if(carColor === 'red'){
-// console.log('Цвет машины красный')
+function calculateAge(year){
+  var currentYear = 2022
+  var result = currentYear - year
+  return result
+}
+
+function checkAndLogAge(year){
+    if(calculateAge(year)<10){
+        console.log('Возраст меньше 10 лет')
+    }else{
+        console.log('Возраст больше 10 лет')
+    }   
+}
+
+checkAndLogAge(carYear)
+checkAndLogAge(personYear)
+
+
+// if(calculateAge(carYear)<10){
+//     console.log('Возраст меньше 10 лет')
 // }else{
-// console.log('Цвет машины не определен')
+//     console.log('Возраст больше 10 лет')
 // }
 
-switch (carColor){
-    case 'green':
-        console.log('Цвет машины зеленый')
-        break
-    case 'yellow':
-        console.log('Цвет машины желтый')
-        break
-    case 'red':
-        console.log('Цвет машины красный')
-        break
-    default:
-        console.log('Цвет машины не определен')
-}
+// if((2022 - carYear)<10){
+//     console.log('Возраст меньше 10 лет')
+// }else{
+//     console.log('Возраст больше 10 лет')
+// }
+
+// if(calculateAge(personYear)<10){
+//     console.log('Возраст меньше 10 лет')
+// }else{
+//     console.log('Возраст больше 10 лет')
+// }
+
+
+// if((2022 - carYear)<10){
+//     console.log('Возраст меньше 10 лет')
+// }else{
+//     console.log('Возраст больше 10 лет')
+// }
+
+// if((2022 - personYear)<10){
+//     console.log('Возраст меньше 10 лет')
+// }else{
+//     console.log('Возраст больше 10 лет')
+// }
+
