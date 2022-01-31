@@ -1,22 +1,35 @@
-console.log(42)
-console.log(-42)
-console.log(1.5)
-console.log(-8 / 3)
-console.log(0xAB)
-console.log(2e3) //2 умножаем на 10 в 3 степени
-console.log(NaN)
-console.log(typeof NaN)
-console.log(123/0)
+var cars = [
+    'Ford',
+    'Mazda',
+    'Audi',
+    'Kia'
+]
+var any =[
+    42,'Apple',{a:1}
+]
 
-var fortyTwo = 42
-var delta = 8 / 3
-console.log(fortyTwo.toString())
-console.log(+delta.toFixed(1) + 4) //чтобы оставить тип число добавляем +
-console.log(parseFloat(delta.toFixed(1)))
-console.log(parseInt(delta.toFixed(1)))
+console.log(cars)
+console.log(any)
+console.log(cars[2])
+console.log(cars.length)
 
-console.log(isNaN(NaN))
-console.log(isNaN(45))
 
-console.log(isFinite(1/0)) //число бесконечно false
-console.log(isFinite(99999999999999))
+cars.push('BMW')
+console.log(cars)
+
+//удаляет и возвращает последний элемент
+bmw = cars.pop()
+console.log(cars,bmw)
+
+//удаляет и возвращает первый элемент
+ford = cars.shift()
+console.log(cars,ford)
+
+//добавляет в начало
+cars.unshift(bmw)
+console.log(cars)
+
+var index = cars.indexOf('Audi')
+var audi = cars[index]
+
+console.log(audi)
