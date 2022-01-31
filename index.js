@@ -1,21 +1,59 @@
 /*
-
-
 &&(и) -  / true если все значения true
 ||(или) -  / true если хоть одно значения true
 ! (нет) - инвертирует true в false
 */ 
 
-console.log('true && true',true && true)
-console.log('true && false',true && false)
+var currentYear = 2022
+var carName = 'Ford'
+var carYear = 2019
+var carAge = currentYear - carYear
 
-console.log('true || false',true || false)
-console.log('false || false',false || false)
+// если возраст машины меньше 5 лет ...
+// если в.м больше или равно 5лет и меньше или равно 10 лет ...
+// иначе другое значение
 
-console.log('!false',!false)
-console.log('!true',!true)
+if(carAge < 5){
+console.log(carName + ' младше 5 лет')
+}else if( carAge>=5 && carAge <= 10){
+  console.log(carName + ' больше или равен 5 годам или меньше  или равен 10 годам')  
+}else{
+    console.log('Возраст ' + carName + ' равняется ' + carAge + ' годам')
+}
 
-console.log('!!true',!!true)
+//false
+if(0){
+console.log('Значение true')
+} else {
+console.log('Значение false')
+}
 
-console.log('(false && true) || (true || false) || !true',(false && true) || (true || false) || !true)
-// false || true || false => true
+if(null){
+    console.log('Значение true')
+    } else {
+    console.log('Значение false')
+    }
+
+if(undefined){
+        console.log('Значение true')
+        } else {
+        console.log('Значение false')
+        }
+var empty = ''
+ if(empty){
+console.log('Значение true')
+ } else {
+console.log('Значение false')
+}
+
+if(NaN){
+console.log('Значение true')
+} else {
+console.log('Значение false')
+}
+
+if(1){
+    console.log('Значение true')
+    } else {
+    console.log('Значение false')
+    }
