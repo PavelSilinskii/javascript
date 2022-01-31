@@ -1,22 +1,17 @@
-console.log('5 % 2', 5 % 2)
-console.log('8 % 3', 8 % 3)
-console.log('15 % 5', 15 % 5)
+console.log('5 > 3', 5 > 3)
+console.log('3 < 2', 3 < 2 )
 
-var i = 1
-//i = i + 1
-i++
-console.log('i',i)
-//i = i - 1
-i--
-console.log('i',i)
-//i = i + 3
-i +=3
-console.log('i',i)
-i /= 1.5
-console.log('i',i)
-i *= 3
-console.log('i',i)
-console.log('i',i++)
-console.log('i',++i)
-console.log('i',i--)
-console.log('i',--i)
+console.log('8 >= 7', 8 >= 7)
+console.log('12 <= 12', 12 <= 12)
+console.log('12 < 12', 12 < 12)
+
+console.log('4 == 4', 4 == 4)
+console.log('4 == 5', 4 == 5)
+
+console.log('4 != 4', 4 != 4)
+console.log('4 != 5', 4 != 5)
+
+console.log('4 === 4', 4 === 4)
+console.log('4 !== string 4', 4 !== '4')
+console.log('4 === string 4', 4 === '4')
+console.log('4 == string 4', 4 == '4')
