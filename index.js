@@ -1,35 +1,27 @@
-var cars = [
-    'Ford',
-    'Mazda',
-    'Audi',
-    'Kia'
-]
-var any =[
-    42,'Apple',{a:1}
-]
+var person ={
+    name: 'Василий',
+    year: 1990,
+    family:['Ирина','Игорь'],
+    car:{
+        year:2010,
+        model:'Ford'
+    },
+    calculateAge: function(){
+      var age = 2022 - this.year
+      console.log('Возраст ',age)  
+    }
 
-console.log(cars)
-console.log(any)
-console.log(cars[2])
-console.log(cars.length)
+}
 
+console.log(person)
+console.log(person.name)
+console.log(person['year'])
+var field = 'car'
+console.log(person[field].year)
 
-cars.push('BMW')
-console.log(cars)
+person.year = 1993
+console.log(person)
 
-//удаляет и возвращает последний элемент
-bmw = cars.pop()
-console.log(cars,bmw)
+person.calculateAge()
 
-//удаляет и возвращает первый элемент
-ford = cars.shift()
-console.log(cars,ford)
-
-//добавляет в начало
-cars.unshift(bmw)
-console.log(cars)
-
-var index = cars.indexOf('Audi')
-var audi = cars[index]
-
-console.log(audi)
+console.log(person)
