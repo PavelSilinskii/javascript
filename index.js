@@ -52,8 +52,29 @@ console.log('Значение true')
 console.log('Значение false')
 }
 
+//true
+var str = 'Hello'
 if(1){
     console.log('Значение true')
     } else {
     console.log('Значение false')
     }
+
+//Тернарные выражения
+1 ? console.log('Значение true') : console.log('Значение false')
+str ? console.log('Значение true') : console.log('Значение false')
+!((false||false) || !true) ? console.log('Значение true') : console.log('Значение false')
+
+
+var personAge = 16
+var message
+
+if(personAge<18){
+    message='Человек еще несовершенолетний'
+}else{
+    message='Человек совершенолетний' 
+}
+console.log(message)
+
+var message = personAge< 18 ? 'Человек еще несовершенолетний' : 'Человек совершенолетний'
+console.log(message)
