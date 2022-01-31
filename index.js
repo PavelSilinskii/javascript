@@ -1,27 +1,26 @@
-var person ={
-    name: 'Василий',
-    year: 1990,
-    family:['Ирина','Игорь'],
-    car:{
-        year:2010,
-        model:'Ford'
-    },
-    calculateAge: function(){
-      var age = 2022 - this.year
-      console.log('Возраст ',age)  
-    }
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+// numbers.push('Not a number')
+// numbers.unshift('0')
+
+for(var i=0;i<numbers.length; i++){
+if(numbers[i]%2 ===0){
+    console.log(numbers[i])
+}
 }
 
-console.log(person)
-console.log(person.name)
-console.log(person['year'])
-var field = 'car'
-console.log(person[field].year)
+for(var i=0;i<numbers.length; i++){
+    if(numbers[i]%2 ===0){
+        continue
+    }
+    console.log(numbers[i])
+    }
 
-person.year = 1993
-console.log(person)
+numbers.push('string')
 
-person.calculateAge()
-
-console.log(person)
+for(var i=0;i<numbers.length; i++){
+        if(typeof numbers[i] === 'string'){
+            break
+        }
+        console.log(numbers[i])
+        }
