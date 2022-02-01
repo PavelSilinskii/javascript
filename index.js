@@ -8,10 +8,11 @@
 var div = document.querySelector('#playground')
 var p = document.querySelectorAll('.text')
 var h1= document.querySelector('h1')
-var ul = document.querySelectorAll('div#playground >ul li')
-var ul1 = document.querySelectorAll('div#playground > div ul li')
-console.log(div)
+var input = document.querySelector('input')
+div.innerHTML='<h2 style="color:red;">From javascript</h2>'
+h1.textContent = 'Change from JS' 
+console.log(input.value)
+console.log(div.innerHTML)
 console.log(p)
-console.log(h1)
-console.log(ul)
-console.log(ul1)
+console.log(h1.textContent)
+
