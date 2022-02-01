@@ -1,26 +1,17 @@
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// var div = document.getElementById('playground')
+// var p =document.getElementsByClassName('text')
+// var h1= document.getElementsByTagName('h1')
+// console.log(div)
+// console.log(p)
+// console.log(h1)
 
-// numbers.push('Not a number')
-// numbers.unshift('0')
-
-for(var i=0;i<numbers.length; i++){
-if(numbers[i]%2 ===0){
-    console.log(numbers[i])
-}
-}
-
-for(var i=0;i<numbers.length; i++){
-    if(numbers[i]%2 ===0){
-        continue
-    }
-    console.log(numbers[i])
-    }
-
-numbers.push('string')
-
-for(var i=0;i<numbers.length; i++){
-        if(typeof numbers[i] === 'string'){
-            break
-        }
-        console.log(numbers[i])
-        }
+var div = document.querySelector('#playground')
+var p = document.querySelectorAll('.text')
+var h1= document.querySelector('h1')
+var ul = document.querySelectorAll('div#playground >ul li')
+var ul1 = document.querySelectorAll('div#playground > div ul li')
+console.log(div)
+console.log(p)
+console.log(h1)
+console.log(ul)
+console.log(ul1)
