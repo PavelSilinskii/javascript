@@ -1,21 +1,7 @@
-var button = document.querySelector('button')
-var h1 = document.querySelector('h1')
-var input = document.querySelector('input')
+var divs = document.querySelectorAll('div')
 
-function buttonHandler(){
-console.log('clicked!')
-h1.textContent = input.value
+for(var i = 0; i < divs.length; i++){
+ divs[i].addEventListener('click', function(){
+     console.log(this.getAttribute('id'))
+ }, true )   
 }
-
-h1.addEventListener('mouseenter',function(){
-    this.style.color = 'red'
-    this.style.backgroundColor = 'blue'
-})
-
-h1.addEventListener('mouseleave',function(){
-   this.style.color = 'black'
-   this.style.backgroundColor = 'transparent'
-})
-
-
-button.addEventListener('click', buttonHandler)
