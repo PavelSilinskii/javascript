@@ -1,29 +1,20 @@
-var divs = document.querySelectorAll('div')
-var link = document.querySelector('a')
+//var p =document.querySelectorAll('p')
+// for(var i = 0; i < p.length; i++){
+//     p[i].addEventListener('click', function(event){
+//         event.target.style.color ='blue'
+//     })
+// }
 
-for(var i = 0; i < divs.length; i++){
- divs[i].addEventListener('click', function(event){
-     event.stopPropagation()
-     console.log(this.getAttribute('id'))
- })   
-}
+document.getElementById('wrapper').addEventListener('click',function(event){
 
-link.addEventListener('click', handleLinkClick)
+    var tagName = event.target.tagName.toLowerCase()
 
-function handleLinkClick(event) {
-    event.preventDefault()
+    if(tagName==='p'){
+        event.target.style.color = 'blue'
+    }
 
-    var div = divs[0]
+    if(event.target.classList.contains('color')){
+        event.target.style.color = 'red'
+    }
+})
 
-    // if(div.style.display==='none'){
-    //     div.style.display = 'flex'
-    // }else{
-    //     div.style.display = 'none'
-    // }
-
-    //в виде тернарного выражения
-    div.style.display = div.style.display === 'none'
-    ? 'flex'
-    : 'none'
-    
-}
