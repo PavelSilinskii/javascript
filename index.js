@@ -1,21 +1,21 @@
-var a = document.querySelector('a')
-var oldHref = a.getAttribute('href')
-var oldTitle = a.getAttribute('title')
+var button = document.querySelector('button')
+var h1 = document.querySelector('h1')
+var input = document.querySelector('input')
 
-a.setAttribute('href','https://yandex.ru')
-a.setAttribute('title','Go Yandex')
-a.textContent = 'Yandex'
-
-var box1 =document.querySelector('#box1')
-var box2 =document.querySelector('#box2')
-
-box1.classList.add('red')
-
-var hasClass = box2.classList.contains('blue')
-console.log(hasClass)
-
-if(hasClass){
-    box2.classList.remove('blue')
-}else{
-    box2.classList.add('blue')
+function buttonHandler(){
+console.log('clicked!')
+h1.textContent = input.value
 }
+
+h1.addEventListener('mouseenter',function(){
+    this.style.color = 'red'
+    this.style.backgroundColor = 'blue'
+})
+
+h1.addEventListener('mouseleave',function(){
+   this.style.color = 'black'
+   this.style.backgroundColor = 'transparent'
+})
+
+
+button.addEventListener('click', buttonHandler)
