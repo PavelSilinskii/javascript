@@ -1,6 +1,15 @@
-var num = 2.4
-console.log(Math.random())
+var person = {
+    name : 'Max',
+    age : 26,
+    car:{
+        model: 'Ford'
+    },
+    job: 'FrontEnd',
+    friends: ['Elena', 'Igor']
+}
 
-console.log(Math.floor(num))
-console.log(Math.ceil(num))
-console.log(Math.PI)
+var str = JSON.stringify(person) // преобразование в строку
+console.log(str)
+
+var obj2 =JSON.parse(str) //преобразование в объект
+console.log(obj2)
