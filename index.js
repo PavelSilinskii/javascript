@@ -1,9 +1,31 @@
-var date = new Date()
-console.log(date)
-//console.log(date.getTimezoneOffset())
-console.log(date.setDate(10))
-console.log(date.getDate())
-console.log(date.getTime()) //timestamp
-console.log(Date.now())
-var date2 = new Date( 360 * 24 * 3)
-console.log(date2)
+document.querySelector('button').addEventListener('click',function(event){
+    
+    var value = document.querySelector('input').value
+
+    var obj = {
+        text:'объект в localStorage'
+    }
+
+    localStorage.setItem('headerTextObj',JSON.stringify(obj))
+
+    localStorage.setItem('headerText',value)
+
+})
+
+document.addEventListener('DOMContentLoaded',function(){
+    
+    var obj = {} //undefined
+    try{
+     obj = JSON.parse(localStorage.getItem('headerTextObj'))
+    } catch(e){}
+
+    if(obj && obj.text && obj.text.trim()){
+        document.querySelector('h2').textContent = obj.text
+        }
+
+    var text  = localStorage.getItem('headerText')
+    
+    if(text && text.trim()){
+    document.querySelector('h1').textContent = text
+    }
+})
