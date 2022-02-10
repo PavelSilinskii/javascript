@@ -1,24 +1,56 @@
-function Car(name,year){
-    this.name = name
-    this.year = year
-}
-
-Car.prototype.getAge = function(){
+var ford =Object.create({
+    calculateDistancePerYear: function(){
+             Object.defineProperty(this, 'distancePerYear', {
+            value: Math.ceil(this.distance / this.age),
+            enumerable:false,
+            writable:false,
+            configurable:false
+        })
+    }
+},{
+ name: {
+     value: 'Ford', 
+     enumerable: true,
+     writable:false,
+     configurable:false},
+ model: {
+     value: 'Focus',
+      enumerable: true,
+       writable:false,
+        configurable:false},
+ year: {value: 2015,
+     enumerable: true,
+      writable:false,
+       configurable:false},
+ distance: {value: 120500,
+     enumerable: true,
+      writable:true, 
+      configurable:false},
+ age:{
+     enumerable:true,
+     get: function(){
+    console.log('Получаем возраст')
     return new Date().getFullYear() - this.year
-}
-
-Car.prototype.color = 'black'
-
-var ford = new Car('Ford',2015)
-var bmw = new Car('BMW',2017)
+     },
+     set: function(){
+        console.log('Устанавливаем значение')
+     }
+ } 
+})
 
 console.log(ford)
-console.log(bmw)
+console.log(ford.calculateDistancePerYear())
 
-console.log(ford.getAge())
-console.log(bmw.getAge())
+console.log(ford.age)
 
-ford.color= 'red'
+console.log(ford.age = 3)
 
-console.log(ford.color)
-console.log(bmw.color)
+console.log(ford.calculateDistancePerYear())
+console.log(ford)
+
+
+for(var key in ford){
+   if(ford.hasOwnProperty(key)){
+    console.log(key,ford[key])
+}
+}
