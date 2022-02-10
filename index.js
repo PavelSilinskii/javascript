@@ -1,18 +1,24 @@
-//number, string, boolean, null, undefined
-//object
-
-var car = {
-    name:'Ford',
-    year:2015,
-    person:{
-        name:'Egor',
-        year:2016
-
-    }
+function Car(name,year){
+    this.name = name
+    this.year = year
 }
 
-// car.__proto__ => Object.prototype
+Car.prototype.getAge = function(){
+    return new Date().getFullYear() - this.year
+}
 
-//[] => Array =>Object
+Car.prototype.color = 'black'
 
-console.log(car)
+var ford = new Car('Ford',2015)
+var bmw = new Car('BMW',2017)
+
+console.log(ford)
+console.log(bmw)
+
+console.log(ford.getAge())
+console.log(bmw.getAge())
+
+ford.color= 'red'
+
+console.log(ford.color)
+console.log(bmw.color)
