@@ -1,45 +1,31 @@
-// var createCounter = function(counterName){
-//    var counter = 0
- 
-//     return function(){
-//         console.log(counterName, ++counter)
-//     }
-// }
+var person = {
+    age:28,
+    name: 'Max',
+    job: 'Frontend',
+    displayInfo: function(ms){
+        console.log(this)
 
-// var counterA = createCounter('Counter A')
-// var counterB = createCounter('Counter B')
+    //     var self = this
+    //     setTimeout(function(){
+    //     //debugger
+    //    console.log('Name: ', self.name)
+    //     console.log('Job: ', self.job)
+    //     console.log('Age: ', self.age)
+            
+    //     },ms)
 
-// console.log(counterA())
-// console.log(counterA())
-// console.log(counterB())
-// console.log(counterA())
-// console.log(counterB())
+        setTimeout(function(){
+       console.log('Name: ', this.name)
+        console.log('Job: ', this.job)
+        console.log('Age: ', this.age)
+        }.bind(this),ms)
 
-var createCounter = function(counterName){
-    var counter = 0
-  
-     return {
-         incriment: function(){
-             counter++
-         },
-         decrement: function(){
-             counter--
-         },
-         getCounter: function(){
-             return counter
-         }
-     }
- }
 
-var counterA = createCounter('Counter A')
-var counterB = createCounter('Counter B')
+        // console.log('Name: ', this.name)
+        // console.log('Job: ', this.job)
+        // console.log('Age: ', this.age)
+    }
+}
 
-counterA.incriment()
-counterA.incriment()
-counterA.incriment()
 
-counterB.decrement()
-counterB.decrement()
-
-console.log(counterA.getCounter())
-console.log(counterB.getCounter())
+person.displayInfo(5000)
