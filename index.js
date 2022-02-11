@@ -1,56 +1,19 @@
-var ford =Object.create({
-    calculateDistancePerYear: function(){
-             Object.defineProperty(this, 'distancePerYear', {
-            value: Math.ceil(this.distance / this.age),
-            enumerable:false,
-            writable:false,
-            configurable:false
-        })
-    }
-},{
- name: {
-     value: 'Ford', 
-     enumerable: true,
-     writable:false,
-     configurable:false},
- model: {
-     value: 'Focus',
-      enumerable: true,
-       writable:false,
-        configurable:false},
- year: {value: 2015,
-     enumerable: true,
-      writable:false,
-       configurable:false},
- distance: {value: 120500,
-     enumerable: true,
-      writable:true, 
-      configurable:false},
- age:{
-     enumerable:true,
-     get: function(){
-    console.log('Получаем возраст')
-    return new Date().getFullYear() - this.year
-     },
-     set: function(){
-        console.log('Устанавливаем значение')
-     }
- } 
+var person = {
+    name:'Max',
+    age: 28,
+    job: 'Frontend'
+}
+
+
+
+
+// for (var key in person){
+//     if(person.hasOwnProperty(key))
+//     console.log(person[key])
+// }
+
+var keys= Object.keys(person).forEach(function(key){
+    console.log(person[key])
 })
 
-console.log(ford)
-console.log(ford.calculateDistancePerYear())
-
-console.log(ford.age)
-
-console.log(ford.age = 3)
-
-console.log(ford.calculateDistancePerYear())
-console.log(ford)
-
-
-for(var key in ford){
-   if(ford.hasOwnProperty(key)){
-    console.log(key,ford[key])
-}
-}
+// console.log(keys)
