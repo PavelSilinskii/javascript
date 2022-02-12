@@ -1,33 +1,46 @@
-// let color = 'red'
-// color = {color: 'blue'}
-// console.log(color)
-
-// for(var i = 0; i<5; i++){
-//     console.log(i)
+// function getAge(year){
+//     const current = new Date().getFullYear()
+//     return current - year
 // }
 
-//выводит одно конечное значение
-// for(var i = 0; i<5; i++){
-//     setTimeout(function(){
-//         console.log(i)
-//     },2000)
-//    }
+// console.log(getAge(1983))
 
-// выводит правильное значение на каждом шаге
-   for(let i = 0; i<5; i++){
-    setTimeout(function(){
-        console.log(i)
-    },2000)
-   }
+// const calculateAge = (year) => {
+//     const current = new Date().getFullYear()
+//      return current - year
+// }
+//  console.log(calculateAge(1981))
 
-const HEX = '#FFAABB'// константа - запрет изменения
-document.querySelector('h1').style.color = HEX
-console.log(HEX)
+// const getAge = year =>{
+//      const current = new Date().getFullYear()
+//      return current - year   
+// }
+// console.log(getAge(1979))
+
+// const getAge = year => new Date().getFullYear() - year   
+// console.log(getAge(2002))
+
+// const logAge = year => console.log(new Date().getFullYear() - year) 
+// logAge(2016)
 
 
-const array = [1,2]
-const obj = {a: 1}
-array.unshift(4)
-obj.b = 2
-console.log(array)
-console.log(obj)
+// const person = {
+//     age: 25,
+//     firstName: 'Maxim',
+//     logNameWithTimeout:function(){
+//         setTimeout(function(){
+//             console.log(this.firstName)
+//         }.bind(this),1000)
+//     }
+// }
+
+const person = {
+    age: 25,
+    firstName: 'Maxim',
+    logNameWithTimeout(){
+        setTimeout(()=>{
+            console.log(this.firstName)
+        },1000)
+    }
+}
+person.logNameWithTimeout()
