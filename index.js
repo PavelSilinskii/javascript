@@ -1,23 +1,33 @@
-var a = [1, 2, 3]
-var b = [5, 'Hello', 6]
+// let color = 'red'
+// color = {color: 'blue'}
+// console.log(color)
 
-Array.prototype.double = function (){
-// console.log(this)
-var newArray = this.map(function(item){
-   if(typeof item === 'number'){
-    return Math.pow(item, 2)
+// for(var i = 0; i<5; i++){
+//     console.log(i)
+// }
+
+//выводит одно конечное значение
+// for(var i = 0; i<5; i++){
+//     setTimeout(function(){
+//         console.log(i)
+//     },2000)
+//    }
+
+// выводит правильное значение на каждом шаге
+   for(let i = 0; i<5; i++){
+    setTimeout(function(){
+        console.log(i)
+    },2000)
    }
-   if(typeof item === 'string'){
-       return item += item
-   }
-     
-})
 
-return newArray
-}
+const HEX = '#FFAABB'// константа - запрет изменения
+document.querySelector('h1').style.color = HEX
+console.log(HEX)
 
-var newA = a.double()
-var newB = b.double()
 
-console.log('A', newA)
-console.log('B', newB)
+const array = [1,2]
+const obj = {a: 1}
+array.unshift(4)
+obj.b = 2
+console.log(array)
+console.log(obj)
