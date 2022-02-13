@@ -1,34 +1,36 @@
-// const createCar = (name,model) => {
-//    return{name,model}
+const form = document.querySelector('form')
+
+form.addEventListener('submit', event =>{
+   
+   event.preventDefault()
+   
+   const title = form.title.value
+   const text = form.text.value
+   const description = form.description.value
+
+   saveForm({title,text,description})
+})
+
+//spread
+// function saveForm(data){
+//    const formData = {
+//       date: new Date().toLocaleDateString(),
+//       // title: data.title,
+//       // text: data.text,
+//       // description: data.description
+//       ...data 
+//    }
+//    console.log('Form data:', formData)
 // }
 
-const createCar = (name,model) => ({name,model})
-
-
-const ford = createCar('Ford','Focus')
-
-console.log(ford)
-
-const yearField = 'year' 
-
-const bmw = {
-   name: 'BMW',
-   ['model']: 'X6 Sport',
-   [yearField]: 2018,
-   // logFields(){
-   //    console.log(this.name, this.model, this.year)
-   // }
-   //новый вид записи
-   logFields(){
-      const{name,model,year} = this
-      console.log(name, model, year)
+//rest 
+function saveForm(...args){
+    console.log('Args', args)
+   
+      const formData = {
+         date: new Date().toLocaleDateString(),
+         ...args
+        
+      }
+      console.log('Form data:', formData)
    }
-
-}
-
-console.log(bmw)
-bmw.logFields()
-
-//const year = bmw.year
-const {year} = bmw
-console.log(year)
