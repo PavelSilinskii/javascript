@@ -1,36 +1,19 @@
-const form = document.querySelector('form')
+const createLink = ({path,name})=> `<a target="_blank" href="${path}">${name}</a>`
 
-form.addEventListener('submit', event =>{
-   
-   event.preventDefault()
-   
-   const title = form.title.value
-   const text = form.text.value
-   const description = form.description.value
+const ul = document.querySelector('ul')
 
-   saveForm({title,text,description})
-})
+const yandex = '<li>'+createLink({path:'https://yandex.ru',name:'Yandex'})+'</li>'
+const google = `<li>${createLink({path:'https://google.com',name:'Google'})}</li>` //шаблонизатор javascript
 
-//spread
-// function saveForm(data){
-//    const formData = {
-//       date: new Date().toLocaleDateString(),
-//       // title: data.title,
-//       // text: data.text,
-//       // description: data.description
-//       ...data 
-//    }
-//    console.log('Form data:', formData)
-// }
 
-//rest 
-function saveForm(...args){
-    console.log('Args', args)
-   
-      const formData = {
-         date: new Date().toLocaleDateString(),
-         ...args
-        
-      }
-      console.log('Form data:', formData)
-   }
+ul.insertAdjacentHTML('afterbegin',google)
+ul.insertAdjacentHTML('afterbegin',yandex)
+
+const strToLog = `
+   Hello
+   world
+      I am  
+      New tab
+`//сохраняет форматирование
+
+console.log(strToLog)
