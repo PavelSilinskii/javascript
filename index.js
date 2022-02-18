@@ -1,12 +1,22 @@
-// setTimeout(function(){
-//    alert('hello timeout')
-// }, 2*1000)
 
-var counter = 0
-var interval = setInterval(function(){
-console.log (++counter)
-}, 1000*2)
+
+
+console.log('Клиент: хочу получить список пользователей')
+console.log('...')
 
 setTimeout(function(){
-   clearInterval(interval)
-},7*1000)
+   console.log('Сервер: запрашиваю список пользователей в БД')
+   console.log('...')
+
+   setTimeout(function(){
+   console.log('БД: формирую список пользователей')
+   console.log('...')
+   setTimeout(function(){
+      console.log('Сервер: трансформирую данные для клиента')
+      console.log('...')
+      setTimeout(function(){
+         console.log('Клиент: получил данные и отображаю их')
+      },1000)
+   },500)
+},500)
+},1000)
