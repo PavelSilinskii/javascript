@@ -1,23 +1,17 @@
 document.querySelector('#load').addEventListener('click',load)
 
-function load(){
-var url = 'https://jsonplaceholder.typicode.com/comments'
+async function load(){
+var url = 'https://jsonplaceholder.typicode.com/users'
 
-fetch(url)//запрос к серверу
-   .then(function(response){ //promise
-      return response.json()
-   })
-   .then(function(data){ //promise
-      var ul = document.querySelector('#list')
+var response = await fetch(url)
+var data =await response.json()
+
+var ul = document.querySelector('#list')
    
-      var html = data.map(function(item){
-         return `<li>${item.id}  ${item.name} (${item.email})</li>`
-      })
+var html = data.map(function(item){
+return `<li>${item.id}  ${item.name} (${item.email})</li>`
+}).join(' ')
       
-      ul.insertAdjacentHTML('afterbegin',html.join(' '))
-      //console.log('Data',html.join(' '))
-
-
-   })
-
+//ul.insertAdjacentHTML('afterbegin',html.join(' '))
+document.querySelector('#list').insertAdjacentHTML('afterbegin',html)
 }
