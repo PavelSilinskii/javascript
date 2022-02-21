@@ -1,58 +1,72 @@
-function sleep(ms){
-   return new Promise(function(resolve){
-      setTimeout(function(){
-         resolve()
-      },ms)
-   })
+// var promise = new Promise((resolve,reject)=>{
+//    setTimeout(()=>{
+//       resolve(2)
+//    },2000)
+// })
+
+// promise
+// .then(num => num *=2)
+// .catch(err=>console.log(err))
+// .then(num => num *=3)
+
+class MyPromise{
+   constructor(callback){
+      this.onCatch = null
+      this.onFinally = null
+      this.thenCbs = []
+      this.isRejected = false
+
+      function resolver(data){
+         if(this.isRejected){return}
+
+         this.thenCbs.forEach(cb =>{
+            data = cb (data)
+         })
+         
+         if(this.onFinally){
+            this.onFinally()
+         }
+
+
+      }
+      function rejecter(error){
+         this.isRejected = true
+         if(this.onCatch){
+            this.onCatch(error)
+         }
+         if(this.onFinally){
+            this.onFinally()
+         }
+      }
+
+      callback (resolver.bind(this),rejecter.bind(this))
+   }
+
+   
+   then(cb){
+      this.thenCbs.push(cb)
+      return this
+   }
+   catch (cb) {
+      this.onCatch = cb
+      return this
+   }
+   finally(cb) {
+      this.onFinally = cb
+      return this
+   }
 }
 
-
-// sleep(1500).then(function(){
-//    console.log('1500')
-// })
-
-// sleep(3000).then(function(){
-//    console.log('3000')
-// })
-
-// Promise.all([sleep(1500), sleep(3000)]).then(function(){ // запускается при последнем promise
-//    console.log('All')
-// })
-
-// Promise.race([sleep(1500), sleep(3000)]).then(function(){ // запускается при первом promise
-//    console.log('Race')
-// })
-
-var p1= sleep(1500).then(function(){
-   return{
-      name: 'Promise 1500'
-   }
+const promise = new MyPromise((resolve,reject)=>{
+   setTimeout(()=>{
+      reject('SomeError')
+      resolve(10)
+   },2000)
 })
 
-var p2= sleep(3000).then(function(){
-   return{
-      name: 'Promise 3000'
-   }
-})
-var p3= sleep(4000).then(function(){
-   return{
-      name: 'Promise 4000'
-   }
-})
-
-async function start(){
-// Promise.all([p1,p2,p3]).then(function(data){
-//    console.log('All',data)
-// })
-
-// Promise.race([p1,p2]).then(function(data){
-//    console.log('All',data)
-// })
-
-var dataAll = await Promise.all([p1, p2, p3])
-var dataRace = await Promise.race([p1, p2])
-console.log('dataAll',dataAll)
-console.log('dataRace',dataRace)
-}
-
-start()
+promise
+.then(num => num *=2)
+.catch(err=>console.log(err))
+.then(num => num *=3)
+.finally(()=>console.log('finally'))
+.then(num => console.log('Done!',num))
